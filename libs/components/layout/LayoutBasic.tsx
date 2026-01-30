@@ -33,7 +33,7 @@ const withLayouBasic = (Component: any) => {
         </Stack>
         
         <Stack id={"footer"}>
-          <Footer/>
+          <Footer />
         </Stack>
       </Stack>
     </>
