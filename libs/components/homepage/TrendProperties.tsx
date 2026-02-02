@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { Stack, Box } from "@mui/material";
-import WestIcon from "@mui/icons-material/West";
 import EastIcon from "@mui/icons-material/East";
+import WestIcon from "@mui/icons-material/West";
+import { Box, Stack } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TrendPropertyCard from "./TrendPropertyCard";
 
 const TrendProperties = () => {
-  const [trendProperties, setTrendProperties] = useState<number[]>([
-    1, 2, 3, 4, 5, 6, 7,
-  ]);
+  const [trendProperties] = useState<number[]>([1, 2, 3, 4, 5, 6, 7]);
 
   return (
     <Stack className={"trend-properties"}>
@@ -18,14 +16,16 @@ const TrendProperties = () => {
             <span>Trend Properties</span>
             <p>Trend is based on likes</p>
           </Box>
+
           <Box className={"right"}>
             <div className={"pagination-box"}>
               <WestIcon className={"swiper-trend-prev"} />
-              <div className={"swiper-trend-pagination"}></div>
+              <div className={"swiper-trend-pagination"} />
               <EastIcon className={"swiper-trend-next"} />
             </div>
           </Box>
         </Stack>
+
         <Stack className={"card-box"}>
           {trendProperties.length === 0 ? (
             <Box className={"empty-list"}>Trends Empty</Box>

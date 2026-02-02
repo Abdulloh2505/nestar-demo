@@ -1,60 +1,55 @@
-import React from "react";
-import { Stack, Box, Divider, Typography, IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
 
-const PopularPropertyCard = () => {
+type Props = {
+  propertyId?: number;
+};
+
+const PopularPropertyCard = ({ propertyId }: Props) => {
   return (
-    <Stack className="popular-card-box">
-      {/* Rasm qismi */}
+    <Stack className={"trend-card-box"}>
       <Box
-        className="card-img"
+        className={"card-img"}
         style={{
-          backgroundImage: `url("/img/banner/types/apartment.webp")`,
+          backgroundImage: "url('/img/banner/types/villa.webp')",
         }}
       >
-        <div className="status">
-          <img src="/img/icons/electricity.svg" alt="" />
-          <span>top</span>
-        </div>
-        <div className="price">$520000</div>
+        <div>$560000</div>
       </Box>
 
-      {/* Ma'lumotlar qismi */}
-      <Box className="info">
-        <strong className="title">Busan City Hall Apartments</strong>
-        <p className="desc">Good wills</p>
+      <Box className={"info"}>
+        <strong className={"title"}>Kingston Buildings {propertyId}</strong>
+        <p className={"desc"}>no description</p>
 
-        <div className="options">
+        <div className={"options"}>
           <div>
             <img src="/img/icons/bed.svg" alt="" />
-            <span>3 bed</span>
+            <span>2 bed</span>
           </div>
           <div>
             <img src="/img/icons/room.svg" alt="" />
-            <span>7 rooms</span>
+            <span>5 rooms</span>
           </div>
           <div>
             <img src="/img/icons/expand.svg" alt="" />
-            <span>220 m2</span>
+            <span>150 m2</span>
           </div>
         </div>
 
         <Divider sx={{ mt: "15px", mb: "17px" }} />
 
-        {/* Pastki qism: Like va View */}
-        <div className="bott">
-          <p>rent</p>
-          <div className="view-like-box">
+        <div className={"bott"}>
+          <p>Rent</p>
+          <div className={"view-like-box"}>
             <IconButton color="default">
               <RemoveRedEyeIcon />
             </IconButton>
-            <Typography className="view-cnt">50</Typography>
-
+            <Typography className={"view-cnt"}>100</Typography>
             <IconButton color="default">
-              <FavoriteIcon style={{ color: "red" }} />
+              <FavoriteIcon />
             </IconButton>
-            <Typography className="view-cnt">250</Typography>
+            <Typography className={"view-cnt"}>100</Typography>
           </div>
         </div>
       </Box>

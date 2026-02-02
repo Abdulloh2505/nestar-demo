@@ -1,21 +1,22 @@
-import React from "react";
-import { Stack, Box, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
-const TopAgentCard = () => {
+type Agent = {
+  id: number;
+  name: string;
+  role: string;
+  imageUrl: string;
+};
+
+type Props = {
+  agent: Agent;
+};
+
+const TopAgentCard = ({ agent }: Props) => {
   return (
     <Stack className={"top-agent-card"}>
-      {/* Agentning aylana rasmi */}
-      <Box className={"agent-img"} />
-
-      {/* Agent haqida ma'lumot qismi */}
-      <Box className={"agent-info"}>
-        <Typography className={"name"} component="strong">
-          Martin
-        </Typography>
-        <Typography className={"type"} component="span">
-          Agent
-        </Typography>
-      </Box>
+      <Box className={"card-img"} style={{ backgroundImage: `url("${agent.imageUrl}")` }} />
+      <strong className={"name"}>{agent.name}</strong>
+      <span className={"role"}>{agent.role}</span>
     </Stack>
   );
 };

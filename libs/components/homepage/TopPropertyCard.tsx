@@ -1,23 +1,27 @@
-import React from "react";
-import { Stack, Box, Divider, Typography } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
 
-const TopPropertyCard = () => {
+type Props = {
+  propertyId?: number;
+};
+
+const TopPropertyCard = ({ propertyId }: Props) => {
   return (
     <Stack className={"top-card-box"}>
       <Box
         className={"card-img"}
         style={{
-          backgroundImage: `url("/img/banner/types/apartment.webp")`,
+          backgroundImage: "url('/img/banner/types/house.webp')",
         }}
       >
-        <div>$420000</div>
+        <div>$720000</div>
       </Box>
+
       <Box className={"info"}>
-        <strong className={"title"}>Run Will Buildings</strong>
+        <strong className={"title"}>Run Will Buildings {propertyId}</strong>
         <p className={"desc"}>Seoul Gangnam Apartments</p>
+
         <div className={"options"}>
           <div>
             <img src="/img/icons/bed.svg" alt="" />
@@ -32,18 +36,20 @@ const TopPropertyCard = () => {
             <span>250 m2</span>
           </div>
         </div>
+
         <Divider sx={{ mt: "15px", mb: "17px" }} />
+
         <div className={"bott"}>
-          <p>Rent</p>
+          <p>Sale</p>
           <div className={"view-like-box"}>
-            <IconButton color={"default"}>
+            <IconButton color="default">
               <RemoveRedEyeIcon />
             </IconButton>
-            <Typography className="view-cnt">120</Typography>
-            <IconButton color={"default"}>
+            <Typography className={"view-cnt"}>75</Typography>
+            <IconButton color="default">
               <FavoriteIcon />
             </IconButton>
-             <Typography className="view-cnt">200</Typography>
+            <Typography className={"view-cnt"}>30</Typography>
           </div>
         </div>
       </Box>
