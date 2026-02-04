@@ -5,24 +5,18 @@ import { light } from "../scss/MaterialTheme";
 import { useState } from "react";
 import "../scss/app.scss";
 import "../scss/pc/main.scss";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/free-mode";
-// _app.tsx
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper";
+import "../scss/mobile/main.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
   // @ts-ignore
   const [theme, setTheme] = useState(createTheme(light));
 
-  return <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Component {...pageProps} />
-  </ThemeProvider>;
+  // Socket.io, Redux, Mui ...
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
